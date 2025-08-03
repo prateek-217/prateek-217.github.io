@@ -133,6 +133,23 @@ body {
     margin: 0 auto 2rem;
     border: 4px solid var(--primary-color);
     box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.hero-avatar-img:hover {
+    transform: scale(1.05);
 }
 
 .hero-title {

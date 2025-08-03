@@ -6,7 +6,11 @@ title: Home
 <section class="hero">
     <div class="hero-container">
         <div class="hero-avatar">
-            <i class="fas fa-user-circle" style="font-size: 150px; color: var(--primary-color);"></i>
+            <img src="/assets/images/profile.jpg" 
+                 alt="Prateek Rajput - Senior Data Engineer" 
+                 class="hero-avatar-img"
+                 onerror="this.onerror=null; this.src='https://github.com/prateek-217.png';">
+            <i class="fas fa-user-circle" style="font-size: 150px; color: var(--primary-color); display: none;"></i>
         </div>
         <h1 class="hero-title">Prateek Rajput</h1>
         <p class="hero-subtitle">Senior Data Engineer & Backend Engineering Leader specializing in scalable systems, big data processing, and cloud architecture</p>
