@@ -10,6 +10,11 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ '/assets/images/icon.png' | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ '/assets/images/icon.png' | relative_url }}">
+    <link rel="shortcut icon" href="{{ '/assets/images/icon.png' | relative_url }}">
+    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -20,6 +25,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="{{ '/' | relative_url }}" class="nav-logo">
+                <img src="{{ '/assets/images/icon.png' | relative_url }}" alt="Logo" class="nav-logo-icon">
                 {{ site.author.name }}
             </a>
             

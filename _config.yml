@@ -19,3 +19,13 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - jekyll.log
+  - dev-server.sh
+  - .jekyll.pid
+  - node_modules
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+  - vendor
+  - .DS_Store
+  - "*.log"
