@@ -52,7 +52,7 @@ title: Home
     </div>
 </section>
 
-<section class="section" style="background: var(--bg-secondary);">
+<section class="section">
     <div class="section-container">
         <h2 class="section-title">Latest Blog Posts</h2>
         <div class="post-grid">
