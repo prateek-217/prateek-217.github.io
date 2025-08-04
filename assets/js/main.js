@@ -36,6 +36,17 @@ class ParticleSystem {
         this.canvas.height = window.innerHeight;
     }
 
+    getParticleColor() {
+        const theme = document.body.getAttribute('data-theme') || 'dark';
+        if (theme === 'light') {
+            // Very dark colors for light theme - almost black
+            return `hsl(${210 + Math.random() * 15}, 40%, 15%)`;
+        } else {
+            // Bright cyan colors for dark theme
+            return `hsl(${190 + Math.random() * 20}, 100%, 70%)`;
+        }
+    }
+
     createParticles() {
         const particleCount = Math.min(100, Math.floor(window.innerWidth / 20));
         
@@ -47,9 +58,16 @@ class ParticleSystem {
                 speedX: (Math.random() - 0.5) * 0.5,
                 speedY: (Math.random() - 0.5) * 0.5,
                 opacity: Math.random() * 0.5 + 0.2,
-                color: `hsl(${190 + Math.random() * 20}, 100%, 70%)`
+                color: this.getParticleColor()
             });
         }
+    }
+
+    updateParticleColors() {
+        // Update existing particle colors when theme changes
+        this.particles.forEach(particle => {
+            particle.color = this.getParticleColor();
+        });
     }
 
     animate() {
@@ -185,6 +203,37 @@ class NavbarEffects {
         window.addEventListener('scroll', () => this.handleScroll());
     }
 
+    getTheme() {
+        return document.body.getAttribute('data-theme') || 'dark';
+    }
+
+    getScrolledBackground() {
+        const theme = this.getTheme();
+        if (theme === 'light') {
+            return 'rgba(248, 250, 252, 0.95)';
+        } else {
+            return 'rgba(10, 14, 26, 0.9)';
+        }
+    }
+
+    getDefaultBackground() {
+        const theme = this.getTheme();
+        if (theme === 'light') {
+            return 'rgba(248, 250, 252, 0.9)';
+        } else {
+            return 'rgba(10, 14, 26, 0.8)';
+        }
+    }
+
+    getScrolledShadow() {
+        const theme = this.getTheme();
+        if (theme === 'light') {
+            return '0 4px 20px rgba(0, 102, 204, 0.1)';
+        } else {
+            return '0 4px 20px rgba(0, 212, 255, 0.1)';
+        }
+    }
+
     handleScroll() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
@@ -195,16 +244,28 @@ class NavbarEffects {
             this.navbar.style.transform = 'translateY(0)';
         }
         
-        // Add blur effect when scrolled
+        // Add blur effect when scrolled - theme aware
         if (scrollTop > 0) {
-            this.navbar.style.background = 'rgba(10, 14, 26, 0.9)';
-            this.navbar.style.boxShadow = '0 4px 20px rgba(0, 212, 255, 0.1)';
+            this.navbar.style.background = this.getScrolledBackground();
+            this.navbar.style.boxShadow = this.getScrolledShadow();
         } else {
-            this.navbar.style.background = 'rgba(10, 14, 26, 0.8)';
+            this.navbar.style.background = this.getDefaultBackground();
             this.navbar.style.boxShadow = 'none';
         }
         
         this.lastScrollTop = scrollTop;
+    }
+
+    // Method to refresh navbar styles when theme changes
+    refreshStyles() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > 0) {
+            this.navbar.style.background = this.getScrolledBackground();
+            this.navbar.style.boxShadow = this.getScrolledShadow();
+        } else {
+            this.navbar.style.background = this.getDefaultBackground();
+            this.navbar.style.boxShadow = 'none';
+        }
     }
 }
 
@@ -482,67 +543,99 @@ class PerformanceMonitor {
 class ThemeManager {
     constructor() {
         this.currentTheme = 'dark';
+        this.themeToggle = null;
         this.init();
     }
 
     init() {
         this.loadTheme();
         this.createThemeToggle();
+        this.updateToggleIcon();
     }
 
     loadTheme() {
         const savedTheme = localStorage.getItem('portfolio-theme');
         if (savedTheme) {
             this.currentTheme = savedTheme;
-            document.body.setAttribute('data-theme', this.currentTheme);
         }
+        document.body.setAttribute('data-theme', this.currentTheme);
     }
 
     createThemeToggle() {
-        const themeToggle = document.createElement('button');
-        themeToggle.innerHTML = '🌙';
-        themeToggle.className = 'theme-toggle';
-        themeToggle.style.cssText = `
+        this.themeToggle = document.createElement('button');
+        this.themeToggle.className = 'theme-toggle';
+        this.themeToggle.setAttribute('aria-label', 'Toggle theme');
+        this.themeToggle.style.cssText = `
             position: fixed;
             top: 50%;
             right: 20px;
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            background: rgba(26, 31, 53, 0.8);
+            border: 1px solid var(--border-color);
+            background: var(--bg-glass);
             backdrop-filter: blur(20px);
-            color: #00d4ff;
+            color: var(--primary-color);
             font-size: 20px;
             cursor: pointer;
             z-index: 1000;
             transition: all 0.3s ease;
             transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         `;
         
-        themeToggle.addEventListener('click', () => this.toggleTheme());
-        document.body.appendChild(themeToggle);
+        this.themeToggle.addEventListener('click', () => this.toggleTheme());
+        document.body.appendChild(this.themeToggle);
+    }
+
+    updateToggleIcon() {
+        if (this.themeToggle) {
+            this.themeToggle.innerHTML = this.currentTheme === 'dark' ? '☀️' : '🌙';
+            this.themeToggle.setAttribute('aria-label', 
+                `Switch to ${this.currentTheme === 'dark' ? 'light' : 'dark'} theme`
+            );
+        }
     }
 
     toggleTheme() {
         this.currentTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
         document.body.setAttribute('data-theme', this.currentTheme);
         localStorage.setItem('portfolio-theme', this.currentTheme);
+        this.updateToggleIcon();
+        
+        // Refresh navbar styles to match new theme
+        if (window.navbarEffects) {
+            window.navbarEffects.refreshStyles();
+        }
+        
+        // Update typewriter cursor styles to match new theme
+        if (window.typewriterCursor) {
+            window.typewriterCursor.updateStyles();
+        }
+        
+        // Update particle colors to match new theme
+        if (window.particleSystem) {
+            window.particleSystem.updateParticleColors();
+        }
     }
 }
 
 // Main App Initialization
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize all components
-    new ParticleSystem();
+    // Initialize theme first to ensure proper theme detection
+    new ThemeManager();
+    
+    // Initialize all other components after theme is loaded
+    window.particleSystem = new ParticleSystem(); // Store globally for theme updates
     new ScrollAnimations();
-    new NavbarEffects();
+    window.navbarEffects = new NavbarEffects(); // Store globally for theme updates
     new MobileNavigation();
     new SmoothScrolling();
     new InteractiveElements();
     new CursorEffects();
     new PerformanceMonitor();
-    new ThemeManager();
     
     // Add typing animation to hero subtitle with glowing cursor
     const heroSubtitle = document.querySelector('.hero-subtitle');
@@ -555,15 +648,41 @@ document.addEventListener('DOMContentLoaded', () => {
         const cursor = document.createElement('span');
         cursor.className = 'typewriter-cursor';
         cursor.innerHTML = '|';
-        cursor.style.cssText = `
-            color: #00d4ff !important;
-            font-weight: 100 !important;
-            animation: typewriter-blink 1s infinite !important;
-            text-shadow: 0 0 8px #00d4ff, 0 0 16px #00d4ff !important;
-            margin-left: 3px !important;
-            display: inline !important;
-            font-size: inherit !important;
-        `;
+        
+        // Apply theme-aware cursor styles
+        const applyCursorStyles = () => {
+            const theme = document.body.getAttribute('data-theme') || 'dark';
+            if (theme === 'light') {
+                cursor.style.cssText = `
+                    color: #1e293b !important;
+                    font-weight: 400 !important;
+                    animation: typewriter-blink 1s infinite !important;
+                    text-shadow: none !important;
+                    margin-left: 3px !important;
+                    display: inline !important;
+                    font-size: inherit !important;
+                `;
+            } else {
+                cursor.style.cssText = `
+                    color: #00d4ff !important;
+                    font-weight: 100 !important;
+                    animation: typewriter-blink 1s infinite !important;
+                    text-shadow: 0 0 8px #00d4ff, 0 0 16px #00d4ff !important;
+                    margin-left: 3px !important;
+                    display: inline !important;
+                    font-size: inherit !important;
+                `;
+            }
+        };
+        
+        // Apply initial styles
+        applyCursorStyles();
+        
+        // Store reference globally for theme updates
+        window.typewriterCursor = {
+            element: cursor,
+            updateStyles: applyCursorStyles
+        };
         
         heroSubtitle.appendChild(cursor);
         
@@ -631,7 +750,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         .theme-toggle:hover {
             transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            box-shadow: var(--shadow-neon);
         }
     `;
     
