@@ -758,18 +758,18 @@ body[data-theme="light"] {
 
 /* Main Content */
 .main-content {
-    margin-top: 80px;
-    padding: 2rem 1.5rem 2rem 1.5rem;
-    min-height: calc(100vh - 160px);
+    margin-top: 60px;
+    padding: 1rem 1.5rem 2rem 1.5rem;
+    min-height: calc(100vh - 140px);
 }
 
 /* Hero Section - Futuristic */
 .hero {
-    padding: 6rem 3rem;
+    padding: 3rem 3rem;
     background: rgba(10, 14, 26, 0.20);
     backdrop-filter: blur(6px);
     position: relative;
-    min-height: calc(100vh - 80px - 6rem);
+    min-height: calc(100vh - 60px - 3rem);
     display: flex;
     align-items: center;
     border: 1px solid rgba(0, 212, 255, 0.1);
@@ -1373,8 +1373,8 @@ body[data-theme="light"] {
     }
 
     .hero {
-        padding: 4rem 1rem;
-        min-height: calc(100vh - 80px);
+        padding: 2rem 1rem;
+        min-height: calc(100vh - 60px);
     }
 
     .hero-cta {
