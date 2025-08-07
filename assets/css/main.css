@@ -1,4 +1,25 @@
-/* Modern Futuristic CSS for Developer Portfolio */
+/**
+ * Modern Futuristic CSS for Developer Portfolio
+ * Organized following Single Responsibility Principle (SRP)
+ * 
+ * TABLE OF CONTENTS:
+ * 1. DESIGN TOKENS & VARIABLES
+ * 2. BASE STYLES & RESET
+ * 3. BACKGROUND EFFECTS
+ * 4. THEME OVERRIDES
+ * 5. LAYOUT & NAVIGATION
+ * 6. HERO SECTION
+ * 7. COMPONENTS (Buttons, Cards, etc.)
+ * 8. CONTENT & TYPOGRAPHY
+ * 9. FOOTER & SOCIAL LINKS
+ * 10. ANIMATIONS & UTILITIES
+ * 11. RESPONSIVE DESIGN
+ */
+
+/* ============================================================================
+   1. DESIGN TOKENS & VARIABLES
+   ============================================================================ */
+
 :root {
     /* Dark Mode Futuristic Colors */
     --primary-color: #00d4ff;
@@ -69,7 +90,10 @@
     --gradient-accent: linear-gradient(135deg, var(--cyber-green), var(--primary-color));
 }
 
-/* CSS Reset & Base Styles */
+/* ============================================================================
+   2. BASE STYLES & RESET
+   ============================================================================ */
+
 * {
     margin: 0;
     padding: 0;
@@ -130,6 +154,10 @@ body[data-theme="light"] {
     background-image: none !important;
     background-attachment: initial !important;
 }
+
+/* ============================================================================
+   3. BACKGROUND EFFECTS
+   ============================================================================ */
 
 /* CodePen Starfield Implementation */
 #stars, #stars2, #stars3 {
@@ -370,6 +398,14 @@ body[data-theme="light"] {
     }
 }
 
+/* ============================================================================
+   3. THEME OVERRIDES
+   ============================================================================ */
+
+/* ============================================================================
+   4. THEME OVERRIDES
+   ============================================================================ */
+
 /* Light Theme Overrides - Consolidated */
 [data-theme="light"] {
     /* Section and Card Backgrounds */
@@ -508,6 +544,14 @@ body[data-theme="light"] {
     }
 }
 
+/* ============================================================================
+   4. LAYOUT & NAVIGATION
+   ============================================================================ */
+
+/* ============================================================================
+   5. LAYOUT & NAVIGATION
+   ============================================================================ */
+
 /* Navigation - Glassmorphism */
 .navbar {
     position: fixed;
@@ -633,6 +677,10 @@ body[data-theme="light"] {
     padding: 1rem 1.5rem 2rem 1.5rem;
     min-height: calc(100vh - 140px);
 }
+
+/* ============================================================================
+   6. HERO SECTION
+   ============================================================================ */
 
 /* Hero Section - Futuristic */
 .hero {
@@ -774,6 +822,10 @@ body[data-theme="light"] {
 }
 
 /* Futuristic Buttons */
+/* ============================================================================
+   7. COMPONENTS (Buttons, Cards, etc.)
+   ============================================================================ */
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -833,6 +885,10 @@ body[data-theme="light"] {
     transform: translateY(-3px);
     box-shadow: var(--shadow-neon);
 }
+
+/* ============================================================================
+   8. CONTENT & TYPOGRAPHY
+   ============================================================================ */
 
 /* Content Sections */
 .section {
@@ -1073,6 +1129,10 @@ body[data-theme="light"] {
     transform: translateX(5px);
 }
 
+/* ============================================================================
+   9. FOOTER & SOCIAL LINKS
+   ============================================================================ */
+
 /* Footer */
 .footer {
     background: rgba(10, 14, 26, 0.6);
@@ -1219,54 +1279,9 @@ body[data-theme="light"] {
     border-radius: 2px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 80px;
-        flex-direction: column;
-        background: var(--bg-glass);
-        backdrop-filter: blur(20px);
-        width: 100%;
-        text-align: center;
-        transition: var(--transition);
-        border-top: 1px solid var(--border-color);
-        padding: 2rem 0;
-    }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .nav-toggle {
-        display: flex;
-    }
-
-    .hero {
-        padding: 1rem 1rem;
-        min-height: 51rem;
-    }
-
-    .hero-cta {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .section {
-        padding: 4rem 1rem;
-    }
-
-    .card-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-}
+/* ============================================================================
+   5. ANIMATIONS & UTILITIES
+   ============================================================================ */
 
 /* Scroll Animations */
 .fade-in {
@@ -1464,5 +1479,58 @@ body[data-theme="light"] {
     }
     50% { 
         opacity: 0.2;
+    }
+}
+
+/* ============================================================================
+   6. RESPONSIVE DESIGN
+   ============================================================================ */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        flex-direction: column;
+        background: var(--bg-glass);
+        backdrop-filter: blur(20px);
+        width: 100%;
+        text-align: center;
+        transition: var(--transition);
+        border-top: 1px solid var(--border-color);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .hero {
+        padding: 1rem 1rem;
+        min-height: 51rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section {
+        padding: 4rem 1rem;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
     }
 }
