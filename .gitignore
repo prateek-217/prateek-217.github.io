@@ -3,3 +3,14 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+
+# Log files
+*.log
+jekyll.log
+
+# System files
+.DS_Store
+.jekyll.pid
+
+# Temporary files
+/tmp/
