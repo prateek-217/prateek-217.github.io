@@ -13,7 +13,7 @@ title: Home
             <i class="fas fa-user-circle" style="font-size: 150px; color: var(--primary-color); display: none;"></i>
         </div>
         <h1 class="hero-title">Prateek Rajput</h1>
-        <p class="hero-subtitle">Senior Data Engineer & Backend Engineering Leader specializing in scalable systems, big data processing, and cloud architecture</p>
+        <p class="hero-subtitle">Senior Data Engineer & Backend Leader with 8+ years of experience building scalable systems for media and e-commerce platforms.</p>
         <div class="hero-cta">
             <a href="/experience" class="btn btn-primary">View Experience</a>
             <a href="/contact" class="btn btn-outline">Get In Touch</a>
@@ -30,7 +30,23 @@ title: Home
                     <i class="fas fa-database"></i>
                 </div>
                 <h3 class="card-title">Data Engineering</h3>
-                <p class="card-description">Building robust data pipelines, ETL processes, and real-time streaming solutions using Apache Spark, Kafka, and modern cloud platforms.</p>
+                <p class="card-description">Built high-performance data pipelines processing 13TB daily, reducing processing time from 24 hours to 4.5 hours. Expert in Apache Spark, Kafka, Hadoop, and scaling systems from 10K to 22K events/sec.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3 class="card-title">Recommendation Systems</h3>
+                <p class="card-description">Designed and migrated recommendation engines from Hadoop to Spark for e-commerce platforms. Developed "HawkEye" computation layer to drastically reduce HDFS read times and improve user experience.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="card-title">AI & LLM Solutions</h3>
+                <p class="card-description">Built AI-powered chatbots using Azure OpenAI Studio and Langchain for media content analysis. Integrated advanced summarization and translation capabilities for daily articles using LLMs.</p>
             </div>
             
             <div class="card">
@@ -38,7 +54,7 @@ title: Home
                     <i class="fas fa-server"></i>
                 </div>
                 <h3 class="card-title">Backend Development</h3>
-                <p class="card-description">Designing and implementing scalable backend systems, microservices architecture, and RESTful APIs with a focus on performance and reliability.</p>
+                <p class="card-description">Architect scalable backend systems using Python Flask, Java, and Scala. Built RESTful APIs and migrated legacy systems to modern cloud-native solutions with focus on reliability.</p>
             </div>
             
             <div class="card">
@@ -46,7 +62,32 @@ title: Home
                     <i class="fas fa-cloud"></i>
                 </div>
                 <h3 class="card-title">Cloud Architecture</h3>
-                <p class="card-description">Architecting cloud-native solutions on AWS, Azure, and GCP with expertise in containerization, orchestration, and infrastructure as code.</p>
+                <p class="card-description">Deploy solutions on Azure and GCP with Docker, Kubernetes, and custom Spark environments. Established cost-effective alternatives to Databricks while optimizing system efficiency.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="card-title">Technical Leadership</h3>
+                <p class="card-description">Currently Senior Manager at Mediacorp Singapore, leading platform modernizations and mentoring teams. Authored design documents and drove NFR planning for major sales events at Flipkart.</p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 3rem; text-align: center;">
+            <div style="display: inline-flex; align-items: center; gap: 2rem; padding: 1rem 2rem; background: var(--bg-glass); border: 1px solid var(--border-color); border-radius: 0.75rem; flex-wrap: wrap; justify-content: center;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary);">
+                    <i class="fas fa-trophy" style="color: var(--primary-color);"></i>
+                    <span><strong>Hackathon Winner</strong> & Multiple Awards</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary);">
+                    <i class="fas fa-graduation-cap" style="color: var(--primary-color);"></i>
+                    <span>Top <strong>1%</strong> in National MCA Rankings</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary);">
+                    <i class="fas fa-map-marker-alt" style="color: var(--primary-color);"></i>
+                    <span>Based in <strong>Singapore</strong> (Employment Pass)</span>
+                </div>
             </div>
         </div>
     </div>
