@@ -14,3 +14,10 @@ jekyll.log
 
 # Temporary files
 /tmp/
+
+# Optimized assets (generated)
+assets/images/optimized/
+*.optimized.*
+
+# Performance optimization artifacts
+.optimization-cache/

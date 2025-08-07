@@ -1,20 +1,64 @@
+# Site Configuration
 title: "Prateek Rajput"
 description: "Senior Data Engineer & Backend Engineering Leader"
 url: "https://prateek-rajput.com"
 baseurl: ""
 
+# Author Information
 author:
   name: "Prateek Rajput"
   email: "prateek.rajput3@gmail.com"
+  bio: "Senior Data Engineer & Backend Engineering Leader"
+  location: "India"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/prateek-217"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://linkedin.com/in/prateek-rajput-217"
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "mailto:prateek.rajput3@gmail.com"
 
+# Jekyll Configuration
 markdown: kramdown
 highlighter: rouge
+permalink: pretty
+timezone: Asia/Kolkata
 
+# Performance & SEO Settings
+# Note: HTML compression plugins not available, using built-in optimizations
+
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
 
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Prateek Rajput"
+      comments: false
+      share: true
+
+# Build Settings
+incremental: false
+future: false
+show_drafts: false
+
+# Exclude from build
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -29,3 +73,12 @@ exclude:
   - vendor
   - .DS_Store
   - "*.log"
+  - _site
+  - .git
+  - .gitignore
+  - package.json
+  - package-lock.json
+  - yarn.lock
+  - .bundle
+  - .ruby-version
+  - .ruby-gemset
