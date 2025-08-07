@@ -8,7 +8,7 @@ title: Education
         <h1 class="section-title">Education</h1>
         <p class="section-subtitle">Academic background and achievements that shaped my technical journey</p>
         
-        <div style="max-width: 800px; margin: 0 auto;">
+        <div style="max-width: 1050px; margin: 0 auto;">
             <!-- Education Item 1 - MCA -->
             <div class="card" style="margin-bottom: 2rem;">
                 <div class="card-icon" style="margin-bottom: 1rem;">

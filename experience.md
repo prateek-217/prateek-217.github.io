@@ -8,7 +8,7 @@ title: Experience
         <h1 class="section-title">Professional Experience</h1>
         <p class="section-subtitle">Over 8 years of experience in data engineering, backend development, and building scalable systems</p>
         
-        <div style="max-width: 900px; margin: 0 auto;">
+        <div style="max-width: 1050px; margin: 0 auto;">
             <!-- Experience Item 1 - Current Role -->
             <div class="card" style="margin-bottom: 2rem;">
                 <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">

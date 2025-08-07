@@ -776,11 +776,11 @@ body[data-theme="light"] {
 
 /* Hero Section - Futuristic */
 .hero {
-    padding: 3rem 3rem;
+    padding: 1.5rem 3rem;
     background: rgba(10, 14, 26, 0.20);
     backdrop-filter: blur(6px);
     position: relative;
-    min-height: calc(100vh - 60px - 3rem);
+    min-height: 53rem;
     display: flex;
     align-items: center;
     border: 1px solid rgba(0, 212, 255, 0.1);
@@ -1384,8 +1384,8 @@ body[data-theme="light"] {
     }
 
     .hero {
-        padding: 2rem 1rem;
-        min-height: calc(100vh - 60px);
+        padding: 1rem 1rem;
+        min-height: 51rem;
     }
 
     .hero-cta {
