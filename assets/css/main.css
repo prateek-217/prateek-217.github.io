@@ -1725,8 +1725,38 @@ body[data-theme="light"] {
    6. RESPONSIVE DESIGN
    ============================================================================ */
 
-/* Responsive Design */
+/* Responsive Typography System */
+@media (max-width: 1200px) {
+    .hero-title {
+        font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(0.95rem, 2.2vw, 1.4rem);
+        min-height: 5.5rem;
+    }
+    
+    .section-title {
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    }
+    
+    .section-subtitle {
+        font-size: clamp(1rem, 1.8vw, 1.125rem);
+    }
+}
+
 @media (max-width: 768px) {
+    /* Base Typography Adjustments */
+    html {
+        font-size: 14px;
+    }
+    
+    body {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    /* Navigation */
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -1748,28 +1778,410 @@ body[data-theme="light"] {
     .nav-toggle {
         display: flex;
     }
-
-    .hero {
-        padding: 1rem 1rem;
-        min-height: 51rem;
+    
+    .nav-logo {
+        font-size: 1.3rem;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+        min-height: 44px; /* Better touch target */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
+    /* Hero Section */
+    .hero {
+        padding: 1rem 1rem;
+        min-height: 45rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        margin-bottom: 0.75rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+        margin-bottom: 3rem;
+        min-height: 4.5rem;
+        line-height: 1.6;
+        padding: 0 0.5rem;
+    }
+    
     .hero-cta {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
+    }
+    
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.875rem 1.75rem;
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        min-height: 44px; /* Better touch target */
     }
 
+    /* Section Typography */
     .section {
-        padding: 4rem 1rem;
+        padding: 3rem 1rem;
+    }
+    
+    .section-title {
+        font-size: clamp(1.6rem, 5vw, 2.2rem);
+        margin-bottom: 0.75rem;
+    }
+    
+    .section-subtitle {
+        font-size: clamp(0.95rem, 2.8vw, 1.1rem);
+        margin-bottom: 3rem;
+        line-height: 1.5;
+        padding: 0 0.5rem;
     }
 
+    /* Cards */
     .card-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+    
+    .card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .card-title {
+        font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+        margin-bottom: 0.75rem;
+    }
+    
+    .card-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .card-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
 
+    /* Content Typography */
+    .content h1, .content h2, .content h3 {
+        font-size: clamp(1.4rem, 4vw, 1.8rem);
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+    }
+    
+    .content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    
+    .content ul, .content ol {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding-left: 1.5rem;
+    }
+    
+    .content li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .content blockquote {
+        font-size: 0.95rem;
+        padding: 1rem 1.25rem;
+        margin: 1.5rem 0;
+    }
+
+    /* Post Content */
+    .post-content h1 { 
+        font-size: clamp(1.4rem, 4.5vw, 1.8rem); 
+    }
+    .post-content h2 { 
+        font-size: clamp(1.3rem, 4vw, 1.6rem); 
+    }
+    .post-content h3 { 
+        font-size: clamp(1.2rem, 3.5vw, 1.4rem); 
+    }
+    .post-content h4 { 
+        font-size: clamp(1.1rem, 3vw, 1.25rem); 
+    }
+    
+    .post-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    
+    .post-content ul, .post-content ol {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding-left: 1.5rem;
+    }
+    
+    .post-content li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .post-content blockquote {
+        font-size: 0.95rem;
+        padding: 1rem 1.25rem;
+        margin: 1.5rem 0;
+    }
+    
+    .post-content code {
+        font-size: 0.85rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .post-content pre {
+        font-size: 0.85rem;
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    /* Footer */
     .footer-content {
         flex-direction: column;
         text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .social-links a {
+        font-size: 1.1rem;
+        width: 45px;
+        height: 45px;
+        min-height: 44px; /* Better touch target */
+    }
+    
+    /* Post Navigation */
+    .post-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .post-navigation .nav-link {
+        width: 100%;
+        justify-content: center;
+        min-height: 44px;
+    }
+    
+    /* Contact Form */
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.95rem;
+        padding: 0.875rem;
+        min-height: 44px;
+    }
+    
+    .contact-form textarea {
+        min-height: 120px;
+    }
+    
+    /* Reading Time */
+    .reading-time {
+        font-size: 0.85rem;
+    }
+    
+    /* Tags */
+    .tag {
+        font-size: 0.8rem;
+        padding: 0.375rem 0.75rem;
+        min-height: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra Small Devices */
+    html {
+        font-size: 13px;
+    }
+    
+    .hero {
+        min-height: 40rem;
+        padding: 0.75rem 0.75rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.6rem, 7vw, 2.2rem);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(0.85rem, 4vw, 1.1rem);
+        min-height: 4rem;
+        padding: 0 0.25rem;
+    }
+    
+    .section {
+        padding: 2.5rem 0.75rem;
+    }
+    
+    .section-title {
+        font-size: clamp(1.4rem, 6vw, 2rem);
+    }
+    
+    .section-subtitle {
+        font-size: clamp(0.9rem, 3.2vw, 1rem);
+        padding: 0 0.25rem;
+    }
+    
+    .card {
+        padding: 1.75rem 1.25rem;
+    }
+    
+    .card-title {
+        font-size: clamp(1.1rem, 4vw, 1.4rem);
+    }
+    
+    .card-description {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.75rem 1.5rem;
+    }
+    
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+    
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 0.625rem 0.875rem;
+    }
+    
+    .content h1, .content h2, .content h3 {
+        font-size: clamp(1.3rem, 4.5vw, 1.6rem);
+    }
+    
+    .content p {
+        font-size: 0.9rem;
+    }
+    
+    .post-content h1 { 
+        font-size: clamp(1.3rem, 5vw, 1.6rem); 
+    }
+    .post-content h2 { 
+        font-size: clamp(1.2rem, 4.5vw, 1.5rem); 
+    }
+    .post-content h3 { 
+        font-size: clamp(1.1rem, 4vw, 1.3rem); 
+    }
+    .post-content h4 { 
+        font-size: clamp(1rem, 3.5vw, 1.2rem); 
+    }
+    
+    .post-content p {
+        font-size: 0.9rem;
+    }
+    
+    .post-content code {
+        font-size: 0.8rem;
+    }
+    
+    .post-content pre {
+        font-size: 0.8rem;
+        padding: 0.875rem;
+    }
+    
+    /* Enhanced touch targets for small screens */
+    .nav-link {
+        min-height: 48px;
+        padding: 0.75rem 1rem;
+    }
+    
+    .btn {
+        min-height: 48px;
+        padding: 0.875rem 1.75rem;
+    }
+    
+    .social-links a {
+        width: 48px;
+        height: 48px;
+        min-height: 48px;
+    }
+    
+    /* Better spacing for small screens */
+    .hero-cta {
+        gap: 1.25rem;
+    }
+    
+    .card-grid {
+        gap: 1.75rem;
+    }
+    
+    .post-navigation {
+        gap: 1.25rem;
+    }
+    
+    /* Contact form improvements */
+    .contact-form input,
+    .contact-form textarea {
+        min-height: 48px;
+        padding: 1rem;
+    }
+    
+    .contact-form textarea {
+        min-height: 140px;
+    }
+    
+    /* Reading time and meta info */
+    .reading-time,
+    .post-date,
+    .post-author {
+        font-size: 0.8rem;
+    }
+    
+    /* Tags with better touch targets */
+    .tag {
+        min-height: 36px;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 360px) {
+    /* Very Small Devices */
+    html {
+        font-size: 12px;
+    }
+    
+    .hero {
+        min-height: 35rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.4rem, 8vw, 2rem);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(0.8rem, 4.5vw, 1rem);
+        min-height: 3.5rem;
+    }
+    
+    .section-title {
+        font-size: clamp(1.2rem, 7vw, 1.8rem);
+    }
+    
+    .section-subtitle {
+        font-size: clamp(0.85rem, 3.5vw, 0.95rem);
+    }
+    
+    .card-title {
+        font-size: clamp(1rem, 4.5vw, 1.3rem);
+    }
+    
+    .btn {
+        font-size: 0.8rem;
+        padding: 0.625rem 1.25rem;
     }
 }
