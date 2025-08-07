@@ -2,52 +2,94 @@
 layout: default
 ---
 
-<article class="section">
+<article class="section post-article">
     <div class="section-container">
-        <header class="post-header" style="text-align: center; margin-bottom: 3rem;">
-            <div class="post-meta" style="font-size: 1rem; color: var(--text-light); margin-bottom: 1rem;">
-                <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
-                {% if page.author %} • {{ page.author }}{% endif %}
-                {% if page.tags.size > 0 %}
-                <div style="margin-top: 0.5rem;">
-                    {% for tag in page.tags %}
-                    <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem; margin-right: 0.5rem;">{{ tag }}</span>
-                    {% endfor %}
-                </div>
+        <!-- Post Header -->
+        <header class="post-header">
+            <div class="post-meta">
+                <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">
+                    {{ page.date | date: "%B %d, %Y" }}
+                </time>
+                {% if page.author %}
+                <span class="post-author"> • {{ page.author }}</span>
                 {% endif %}
+                {% assign words = content | number_of_words %}
+                <span class="reading-time"> • {{ words | divided_by: 200 | plus: 1 }} min read</span>
             </div>
-            <h1 style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem;">{{ page.title }}</h1>
+            
+            <h1 class="post-title">{{ page.title }}</h1>
+            
             {% if page.excerpt %}
-            <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto;">{{ page.excerpt | strip_html }}</p>
+            <p class="post-excerpt">{{ page.excerpt | strip_html }}</p>
+            {% endif %}
+            
+            {% if page.tags.size > 0 %}
+            <div class="post-tags">
+                {% for tag in page.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
             {% endif %}
         </header>
 
-        <div class="content" style="max-width: 800px; margin: 0 auto; font-size: 1.125rem; line-height: 1.8;">
+        <!-- Post Content -->
+        <div class="post-content">
             {{ content }}
         </div>
 
-        <footer class="post-footer" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <!-- Post Footer -->
+        <footer class="post-footer">
+            <div class="post-navigation">
                 {% if page.previous.url %}
-                <a href="{{ page.previous.url | relative_url }}" style="text-decoration: none; color: var(--primary-color); font-weight: 500;">
-                    ← {{ page.previous.title | truncate: 30 }}
+                <a href="{{ page.previous.url | relative_url }}" class="nav-link prev" aria-label="Previous post">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>{{ page.previous.title | truncate: 30 }}</span>
                 </a>
                 {% else %}
-                <div></div>
+                <div class="nav-placeholder"></div>
                 {% endif %}
 
-                <a href="/blog" style="text-decoration: none; color: var(--text-secondary); font-weight: 500;">
-                    All Posts
+                <a href="/blog" class="nav-link all-posts" aria-label="All blog posts">
+                    <i class="fas fa-list"></i>
+                    <span>All Posts</span>
                 </a>
 
                 {% if page.next.url %}
-                <a href="{{ page.next.url | relative_url }}" style="text-decoration: none; color: var(--primary-color); font-weight: 500;">
-                    {{ page.next.title | truncate: 30 }} →
+                <a href="{{ page.next.url | relative_url }}" class="nav-link next" aria-label="Next post">
+                    <span>{{ page.next.title | truncate: 30 }}</span>
+                    <i class="fas fa-arrow-right"></i>
                 </a>
                 {% else %}
-                <div></div>
+                <div class="nav-placeholder"></div>
                 {% endif %}
             </div>
         </footer>
     </div>
 </article>
+
+<!-- Structured Data for Article -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ page.title }}",
+    "author": {
+        "@type": "Person",
+        "name": "{{ page.author | default: site.author.name }}"
+    },
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.last_modified_at | date_to_xmlschema | default: page.date | date_to_xmlschema }}",
+    "publisher": {
+        "@type": "Person",
+        "name": "{{ site.author.name }}",
+        "url": "{{ site.url }}"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.url | absolute_url }}"
+    },
+    "description": "{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}",
+    "image": "{{ page.image | default: '/assets/images/profile.jpg' | absolute_url }}",
+    "url": "{{ page.url | absolute_url }}"
+}
+</script>
