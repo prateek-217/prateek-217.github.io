@@ -599,6 +599,21 @@ body[data-theme="light"] {
     align-items: center;
     gap: 0.2rem;
     padding: 0.3rem 0.6rem;
+    outline: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.nav-logo:focus {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.nav-logo:active {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .nav-logo-icon {
@@ -646,6 +661,21 @@ body[data-theme="light"] {
     position: relative;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
+    outline: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.nav-link:focus {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.nav-link:active {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .nav-link::before {
@@ -1321,8 +1351,13 @@ body[data-theme="light"] {
 
 /* Focus States */
 *:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+*:active {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
 }
 
 /* Loading Animation */

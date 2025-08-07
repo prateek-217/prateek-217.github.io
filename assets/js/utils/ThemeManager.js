@@ -13,6 +13,7 @@ export class ThemeManager {
         this.loadTheme();
         this.createThemeToggle();
         this.updateToggleIcon();
+        this.updateToggleBackground();
     }
 
     loadTheme() {
@@ -29,8 +30,9 @@ export class ThemeManager {
         this.themeToggle.setAttribute('aria-label', 'Toggle theme');
         this.themeToggle.style.cssText = `
             position: fixed;
-            top: 50%;
-            right: 20px;
+            top: auto;
+            bottom: 10%;
+            right: 10px;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -38,7 +40,7 @@ export class ThemeManager {
             background: var(--bg-glass);
             backdrop-filter: blur(20px);
             color: var(--primary-color);
-            font-size: 20px;
+            font-size: 24px;
             cursor: pointer;
             z-index: 1000;
             transition: all 0.3s ease;
@@ -46,6 +48,12 @@ export class ThemeManager {
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(0, 212, 255, 0.1);
+            outline: none;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         `;
         
         this.themeToggle.addEventListener('click', () => this.toggleTheme());
@@ -54,7 +62,13 @@ export class ThemeManager {
 
     updateToggleIcon() {
         if (this.themeToggle) {
-            this.themeToggle.innerHTML = this.currentTheme === 'dark' ? '☀️' : '🌙';
+            if (this.currentTheme === 'dark') {
+                this.themeToggle.innerHTML = '☀️';
+                this.themeToggle.style.fontSize = '28px'; // Larger sun icon
+            } else {
+                this.themeToggle.innerHTML = '🌙';
+                this.themeToggle.style.fontSize = '20px'; // Normal moon icon
+            }
             this.themeToggle.setAttribute('aria-label', 
                 `Switch to ${this.currentTheme === 'dark' ? 'light' : 'dark'} theme`
             );
@@ -62,13 +76,32 @@ export class ThemeManager {
     }
 
     toggleTheme() {
+        console.log('Toggling theme from:', this.currentTheme);
         this.currentTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
+        console.log('Toggling theme to:', this.currentTheme);
         document.body.setAttribute('data-theme', this.currentTheme);
         localStorage.setItem('portfolio-theme', this.currentTheme);
         this.updateToggleIcon();
+        this.updateToggleBackground();
         
         // Notify other components of theme change
         this.notifyThemeChange();
+    }
+
+    updateToggleBackground() {
+        if (this.themeToggle) {
+            if (this.currentTheme === 'dark') {
+                this.themeToggle.style.background = '#87CEEB'; // Light blue sky - solid color
+                this.themeToggle.style.boxShadow = '0 0 30px rgba(135, 206, 235, 0.6), 0 0 60px rgba(135, 206, 235, 0.3), 0 0 90px rgba(135, 206, 235, 0.1), 0 0 120px rgba(135, 206, 235, 0.05)';
+                console.log('Dark mode: Setting background to light blue sky (solid)');
+            } else {
+                this.themeToggle.style.background = '#1e3a8a'; // Night blue - solid color
+                this.themeToggle.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3), 0 8px 40px rgba(0, 0, 0, 0.2), 0 12px 60px rgba(0, 0, 0, 0.1)';
+                console.log('Light mode: Setting background to night blue (solid)');
+            }
+        } else {
+            console.log('Theme toggle element not found!');
+        }
     }
 
     notifyThemeChange() {

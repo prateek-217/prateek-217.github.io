@@ -138,8 +138,15 @@ export class PortfolioApp {
             }
             
             .theme-toggle:hover {
-                transform: translateY(-50%) scale(1.1);
-                box-shadow: var(--shadow-neon);
+                transform: scale(1.1);
+            }
+            
+            [data-theme="dark"] .theme-toggle:hover {
+                box-shadow: 0 0 40px rgba(135, 206, 235, 0.8), 0 0 80px rgba(135, 206, 235, 0.4), 0 0 120px rgba(135, 206, 235, 0.2), 0 0 160px rgba(135, 206, 235, 0.1) !important;
+            }
+            
+            [data-theme="light"] .theme-toggle:hover {
+                box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4), 0 12px 60px rgba(0, 0, 0, 0.3), 0 18px 90px rgba(0, 0, 0, 0.2) !important;
             }
         `;
         
