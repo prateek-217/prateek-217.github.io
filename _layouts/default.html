@@ -1,113 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- SEO Meta Tags -->
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="author" content="{{ site.author.name }}">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Canonical and RSS -->
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ '/assets/images/icon.png' | relative_url }}">
-    <link rel="apple-touch-icon" href="{{ '/assets/images/icon.png' | relative_url }}">
-    <link rel="shortcut icon" href="{{ '/assets/images/icon.png' | relative_url }}">
-    
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="{{ '/assets/css/main.css' | relative_url }}" as="style">
-    <link rel="preload" href="{{ '/assets/js/main.js' | relative_url }}" as="script">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "{{ site.author.name }}",
-        "url": "{{ site.url }}",
-        "image": "{{ '/assets/images/profile.jpg' | absolute_url }}",
-        "sameAs": [
-            "https://www.linkedin.com/in/prateek-rajput/",
-            "https://github.com/prateek-217"
-        ],
-        "jobTitle": "{{ site.author.title | default: 'Software Engineer' }}",
-        "worksFor": {
-            "@type": "Organization",
-            "name": "{{ site.author.company | default: 'Freelance' }}"
-        }
-    }
-    </script>
-    
-    {% seo %}
+    {% include head.html %}
 </head>
 <body>
-    <!-- Background Effects -->
-    <div id="stars"></div>
-    <div id="stars2"></div>
-    <div id="stars3"></div>
-    
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="{{ '/' | relative_url }}" class="nav-logo" aria-label="Home">
-                <img src="{{ '/assets/images/icon.png' | relative_url }}" alt="Logo" class="nav-logo-icon">
-                {{ site.author.name }}
-            </a>
-            
-            <div class="nav-menu" id="nav-menu">
-                <a href="{{ '/experience' | relative_url }}" class="nav-link">Experience</a>
-                <a href="{{ '/education' | relative_url }}" class="nav-link">Education</a>
-                <a href="{{ '/project' | relative_url }}" class="nav-link">Projects</a>
-                <a href="{{ '/blog' | relative_url }}" class="nav-link">Blog</a>
-                <a href="{{ '/contact' | relative_url }}" class="nav-link">Contact</a>
-            </div>
-            
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+    {% include navigation.html %}
 
     <!-- Main Content -->
     <main class="main-content">
         {{ content }}
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="mailto:{{ site.author.email }}" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/prateek-rajput/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/prateek-217" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script type="module" src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    {% include footer.html %}
+    {% include scripts.html %}
 </body>
 </html>

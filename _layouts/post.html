@@ -4,92 +4,15 @@ layout: default
 
 <article class="section post-article">
     <div class="section-container">
-        <!-- Post Header -->
-        <header class="post-header">
-            <div class="post-meta">
-                <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">
-                    {{ page.date | date: "%B %d, %Y" }}
-                </time>
-                {% if page.author %}
-                <span class="post-author"> • {{ page.author }}</span>
-                {% endif %}
-                {% assign words = content | number_of_words %}
-                <span class="reading-time"> • {{ words | divided_by: 200 | plus: 1 }} min read</span>
-            </div>
-            
-            <h1 class="post-title">{{ page.title }}</h1>
-            
-            {% if page.excerpt %}
-            <p class="post-excerpt">{{ page.excerpt | strip_html }}</p>
-            {% endif %}
-            
-            {% if page.tags.size > 0 %}
-            <div class="post-tags">
-                {% for tag in page.tags %}
-                <span class="tag">{{ tag }}</span>
-                {% endfor %}
-            </div>
-            {% endif %}
-        </header>
+        {% include post-header.html %}
 
         <!-- Post Content -->
         <div class="post-content">
             {{ content }}
         </div>
 
-        <!-- Post Footer -->
-        <footer class="post-footer">
-            <div class="post-navigation">
-                {% if page.previous.url %}
-                <a href="{{ page.previous.url | relative_url }}" class="nav-link prev" aria-label="Previous post">
-                    <i class="fas fa-arrow-left"></i>
-                    <span>{{ page.previous.title | truncate: 30 }}</span>
-                </a>
-                {% else %}
-                <div class="nav-placeholder"></div>
-                {% endif %}
-
-                <a href="/blog" class="nav-link all-posts" aria-label="All blog posts">
-                    <i class="fas fa-list"></i>
-                    <span>All Posts</span>
-                </a>
-
-                {% if page.next.url %}
-                <a href="{{ page.next.url | relative_url }}" class="nav-link next" aria-label="Next post">
-                    <span>{{ page.next.title | truncate: 30 }}</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                {% else %}
-                <div class="nav-placeholder"></div>
-                {% endif %}
-            </div>
-        </footer>
+        {% include post-footer.html %}
     </div>
 </article>
 
-<!-- Structured Data for Article -->
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "{{ page.title }}",
-    "author": {
-        "@type": "Person",
-        "name": "{{ page.author | default: site.author.name }}"
-    },
-    "datePublished": "{{ page.date | date_to_xmlschema }}",
-    "dateModified": "{{ page.last_modified_at | date_to_xmlschema | default: page.date | date_to_xmlschema }}",
-    "publisher": {
-        "@type": "Person",
-        "name": "{{ site.author.name }}",
-        "url": "{{ site.url }}"
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "{{ page.url | absolute_url }}"
-    },
-    "description": "{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}",
-    "image": "{{ page.image | default: '/assets/images/profile.jpg' | absolute_url }}",
-    "url": "{{ page.url | absolute_url }}"
-}
-</script>
+{% include post-structured-data.html %}

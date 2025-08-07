@@ -1,0 +1,28 @@
+<!-- Background Effects -->
+<div id="stars"></div>
+<div id="stars2"></div>
+<div id="stars3"></div>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="{{ '/' | relative_url }}" class="nav-logo" aria-label="Home">
+            <img src="{{ '/assets/images/icon.png' | relative_url }}" alt="Logo" class="nav-logo-icon">
+            {{ site.author.name }}
+        </a>
+        
+        <div class="nav-menu" id="nav-menu">
+            <a href="{{ '/experience' | relative_url }}" class="nav-link">Experience</a>
+            <a href="{{ '/education' | relative_url }}" class="nav-link">Education</a>
+            <a href="{{ '/project' | relative_url }}" class="nav-link">Projects</a>
+            <a href="{{ '/blog' | relative_url }}" class="nav-link">Blog</a>
+            <a href="{{ '/contact' | relative_url }}" class="nav-link">Contact</a>
+        </div>
+        
+        <div class="nav-toggle" id="nav-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>

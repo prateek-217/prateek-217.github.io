@@ -1,0 +1,50 @@
+<!-- SEO Meta Tags -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta name="author" content="{{ site.author.name }}">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical and RSS -->
+<link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="{{ '/assets/images/icon.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/assets/images/icon.png' | relative_url }}">
+<link rel="shortcut icon" href="{{ '/assets/images/icon.png' | relative_url }}">
+
+<!-- Preload Critical Resources -->
+<link rel="preload" href="{{ '/assets/css/main.css' | relative_url }}" as="style">
+<link rel="preload" href="{{ '/assets/js/main.js' | relative_url }}" as="script">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "url": "{{ site.url }}",
+    "image": "{{ '/assets/images/profile.jpg' | absolute_url }}",
+    "sameAs": [
+        "https://www.linkedin.com/in/prateek-rajput/",
+        "https://github.com/prateek-217"
+    ],
+    "jobTitle": "{{ site.author.title | default: 'Software Engineer' }}",
+    "worksFor": {
+        "@type": "Organization",
+        "name": "{{ site.author.company | default: 'Freelance' }}"
+    }
+}
+</script>
+
+{% seo %}

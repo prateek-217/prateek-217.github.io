@@ -1,0 +1,27 @@
+<!-- Post Footer -->
+<footer class="post-footer">
+    <div class="post-navigation">
+        {% if page.previous.url %}
+        <a href="{{ page.previous.url | relative_url }}" class="nav-link prev" aria-label="Previous post">
+            <i class="fas fa-arrow-left"></i>
+            <span>{{ page.previous.title | truncate: 30 }}</span>
+        </a>
+        {% else %}
+        <div class="nav-placeholder"></div>
+        {% endif %}
+
+        <a href="/blog" class="nav-link all-posts" aria-label="All blog posts">
+            <i class="fas fa-list"></i>
+            <span>All Posts</span>
+        </a>
+
+        {% if page.next.url %}
+        <a href="{{ page.next.url | relative_url }}" class="nav-link next" aria-label="Next post">
+            <span>{{ page.next.title | truncate: 30 }}</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+        {% else %}
+        <div class="nav-placeholder"></div>
+        {% endif %}
+    </div>
+</footer>
