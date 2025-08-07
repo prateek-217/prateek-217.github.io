@@ -254,6 +254,17 @@
     filter: brightness(0.2) sepia(1) saturate(5) hue-rotate(200deg) brightness(0.8) !important;
 }
 
+/* Disable All Remaining Glow Effects in Light Theme */
+[data-theme="light"] * {
+    text-shadow: none !important;
+}
+
+[data-theme="light"] .neon-glow,
+[data-theme="light"] [class*="glow"] {
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.15) !important;
+    animation: none !important;
+}
+
 /* CSS Reset & Base Styles */
 * {
     margin: 0;
@@ -789,7 +800,7 @@ body[data-theme="light"] {
 }
 
 .hero-container {
-    max-width: 900px;
+    max-width: 1150px;
     margin: 0 auto;
     text-align: center;
     position: relative;
@@ -863,7 +874,7 @@ body[data-theme="light"] {
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     color: var(--text-secondary);
     margin-bottom: 4rem;
-    max-width: 700px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     animation: subtitleFadeIn 1s ease-out 0.3s both;
@@ -980,7 +991,7 @@ body[data-theme="light"] {
 }
 
 .section-container {
-    max-width: 800px;
+    max-width: 1050px;
     margin: 0 auto;
 }
 
@@ -1013,7 +1024,7 @@ body[data-theme="light"] {
     color: var(--text-secondary);
     text-align: center;
     margin-bottom: 4rem;
-    max-width: 600px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }

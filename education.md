@@ -11,16 +11,14 @@ title: Education
         <div style="max-width: 800px; margin: 0 auto;">
             <!-- Education Item 1 - MCA -->
             <div class="card" style="margin-bottom: 2rem;">
+                <div class="card-icon" style="margin-bottom: 1rem;">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
                 <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
-                    <div style="display: flex; align-items: start; gap: 1rem;">
-                        <div class="card-icon" style="margin-top: 0.25rem;">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div>
-                            <h3 class="card-title" style="margin-bottom: 0.5rem;">Master of Computer Applications (MCA)</h3>
-                            <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.25rem;">National Institute of Technology, Tiruchirappalli</p>
-                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Tamil Nadu, India</p>
-                        </div>
+                    <div>
+                        <h3 class="card-title" style="margin-bottom: 0.5rem;">Master of Computer Applications (MCA)</h3>
+                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.25rem;">National Institute of Technology, Tiruchirappalli</p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Tamil Nadu, India</p>
                     </div>
                     <div style="background: var(--bg-accent); padding: 0.5rem 1rem; border-radius: 0.5rem; color: var(--text-secondary); font-weight: 500; white-space: nowrap;">
                         Jul 2014 - Jun 2017
@@ -45,17 +43,15 @@ title: Education
             
             <!-- Education Item 2 - BSc -->
             <div class="card" style="margin-bottom: 2rem;">
+                <div class="card-icon" style="margin-bottom: 1rem;">
+                    <i class="fas fa-university"></i>
+                </div>
                 <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
-                    <div style="display: flex; align-items: start; gap: 1rem;">
-                        <div class="card-icon" style="margin-top: 0.25rem;">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <div>
-                            <h3 class="card-title" style="margin-bottom: 0.5rem;">Bachelor of Science (Computer Science)</h3>
-                            <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.25rem;">Maharaja Bhoj Govt. P. G. College, Dhar</p>
-                            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.25rem; font-style: italic;">Affiliated by Devi Ahilya Vishwavidyalaya, Indore</p>
-                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Madhya Pradesh, India</p>
-                        </div>
+                    <div>
+                        <h3 class="card-title" style="margin-bottom: 0.5rem;">Bachelor of Science (Computer Science)</h3>
+                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.25rem;">Maharaja Bhoj Govt. P. G. College, Dhar</p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.25rem; font-style: italic;">Affiliated by Devi Ahilya Vishwavidyalaya, Indore</p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Madhya Pradesh, India</p>
                     </div>
                     <div style="background: var(--bg-accent); padding: 0.5rem 1rem; border-radius: 0.5rem; color: var(--text-secondary); font-weight: 500; white-space: nowrap;">
                         Jul 2010 - Jun 2013
