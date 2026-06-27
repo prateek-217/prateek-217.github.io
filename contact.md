@@ -9,51 +9,8 @@ title: Contact
         <p class="section-subtitle">Let's discuss opportunities in data engineering, backend development, or technology leadership</p>
         
         <div style="max-width: 1050px; margin: 0 auto;">
-            <!-- Combined Contact Information and Collaboration -->
+            <!-- Collaboration -->
             <div class="card">
-                <!-- Contact Information Section -->
-                <div style="margin-bottom: 3rem; text-align: center;">
-                    <h3 style="color: var(--text-primary); margin-bottom: 2rem; font-size: 1.5rem;">Contact Information</h3>
-                    
-                    <div style="display: inline-block; text-align: left;">
-                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                        <div style="display: flex; align-items: center;">
-                            <div class="contact-icon" style="width: 45px; height: 45px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                                <i class="fab fa-linkedin" style="color: white; font-size: 1rem;"></i>
-                            </div>
-                            <div>
-                                <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">LinkedIn</p>
-                                <a href="https://www.linkedin.com/in/prateek-rajput/" target="_blank" style="color: var(--primary-color); text-decoration: none;">linkedin.com/in/prateek-rajput</a>
-                            </div>
-                        </div>
-                        
-                        <div style="display: flex; align-items: center;">
-                            <div class="contact-icon" style="width: 45px; height: 45px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                                <i class="fab fa-github" style="color: white; font-size: 1rem;"></i>
-                            </div>
-                            <div>
-                                <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">GitHub</p>
-                                <a href="https://github.com/prateek-217" target="_blank" style="color: var(--primary-color); text-decoration: none;">github.com/prateek-217</a>
-                            </div>
-                        </div>
-                        
-                        <div style="display: flex; align-items: center;">
-                            <div class="contact-icon" style="width: 45px; height: 45px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                                <i class="fas fa-map-marker-alt" style="color: white; font-size: 1rem;"></i>
-                            </div>
-                            <div>
-                                <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Location</p>
-                                <p style="color: var(--text-secondary);">Singapore</p>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Divider -->
-                <div style="border-top: 1px solid var(--border-color); margin: 2rem 0; padding-top: 2rem;"></div>
-                
-                <!-- Collaboration Section -->
                 <div style="text-align: center;">
                     <h3 class="card-title">Looking for Collaboration?</h3>
                     <p class="card-description" style="margin-bottom: 2rem;">
@@ -62,6 +19,9 @@ title: Contact
                     <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
                         <a href="https://www.linkedin.com/in/prateek-rajput/" target="_blank" class="btn btn-primary">
                             <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                        </a>
+                        <a href="https://github.com/prateek-217" target="_blank" class="btn btn-outline">
+                            <i class="fab fa-github"></i> View GitHub
                         </a>
                     </div>
                 </div>
