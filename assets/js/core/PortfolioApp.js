@@ -101,40 +101,7 @@ export class PortfolioApp {
                     opacity: 0;
                 }
             }
-            
-            
-            .custom-cursor {
-                display: none;
-            }
-            
-            @media (min-width: 769px) {
-                .custom-cursor {
-                    display: block;
-                }
-                
-                * {
-                    cursor: none !important;
-                }
-            }
-            
-            @media (min-width: 769px) {
-                .custom-cursor {
-                    display: block;
-                }
-                
-                /* Hide default cursor on all elements */
-                *, *::before, *::after {
-                    cursor: none !important;
-                }
-                
-                /* Ensure custom cursor is always on top */
-                .custom-cursor,
-                .custom-cursor-inner {
-                    pointer-events: none !important;
-                    z-index: 99999 !important;
-                }
-            }
-            
+
             .theme-toggle:hover {
                 transform: scale(1.1);
             }
