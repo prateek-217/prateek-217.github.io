@@ -19,16 +19,6 @@ title: Contact
                         <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                         <div style="display: flex; align-items: center;">
                             <div class="contact-icon" style="width: 45px; height: 45px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                                <i class="fas fa-envelope" style="color: white; font-size: 1rem;"></i>
-                            </div>
-                            <div>
-                                <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Email</p>
-                                <a href="mailto:prateek.rajput3@gmail.com" style="color: var(--primary-color); text-decoration: none;">prateek.rajput3@gmail.com</a>
-                            </div>
-                        </div>
-                        
-                        <div style="display: flex; align-items: center;">
-                            <div class="contact-icon" style="width: 45px; height: 45px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
                                 <i class="fab fa-linkedin" style="color: white; font-size: 1rem;"></i>
                             </div>
                             <div>
@@ -70,10 +60,7 @@ title: Contact
                         I'm always interested in discussing new opportunities, whether it's consulting on data architecture, building scalable systems, or leading engineering teams. Let's connect and explore how we can work together.
                     </p>
                     <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                        <a href="mailto:prateek.rajput3@gmail.com" class="btn btn-primary">
-                            <i class="fas fa-envelope"></i> Email Me
-                        </a>
-                        <a href="https://www.linkedin.com/in/prateek-rajput/" target="_blank" class="btn btn-outline">
+                        <a href="https://www.linkedin.com/in/prateek-rajput/" target="_blank" class="btn btn-primary">
                             <i class="fab fa-linkedin"></i> Connect on LinkedIn
                         </a>
                     </div>

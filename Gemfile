@@ -4,6 +4,13 @@ source "https://rubygems.org"
 # Core Jekyll
 gem "jekyll", "~> 4.3.0"
 
+# Stdlib gems no longer bundled by default in Ruby 3.4+/4.0 (required by Jekyll 4.3)
+gem "logger"
+gem "csv"
+gem "base64"
+gem "bigdecimal"
+gem "ostruct"
+
 # Performance & SEO Plugins
 group :jekyll_plugins do
   # Core plugins
