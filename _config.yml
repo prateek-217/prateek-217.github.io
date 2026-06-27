@@ -7,7 +7,6 @@ baseurl: ""
 # Author Information
 author:
   name: "Prateek Rajput"
-  email: "prateek.rajput3@gmail.com"
   bio: "Senior Data Engineer & Backend Engineering Leader"
   location: "India"
   links:
@@ -17,9 +16,6 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
       url: "https://linkedin.com/in/prateek-rajput-217"
-    - label: "Email"
-      icon: "fas fa-envelope"
-      url: "mailto:prateek.rajput3@gmail.com"
 
 # Jekyll Configuration
 markdown: kramdown

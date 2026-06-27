@@ -10,7 +10,6 @@ import { NavigationEffects } from '../navigation/NavigationEffects.js';
 import { MobileNavigation } from '../navigation/MobileNavigation.js';
 import { SmoothScrolling } from '../navigation/SmoothScrolling.js';
 import { InteractiveElements } from '../interactive/InteractiveElements.js';
-import { CursorEffects } from '../interactive/CursorEffects.js';
 import { ScrollAnimations } from '../animations/ScrollAnimations.js';
 
 export class PortfolioApp {
@@ -35,7 +34,6 @@ export class PortfolioApp {
         this.components.set('mobileNavigation', new MobileNavigation());
         this.components.set('smoothScrolling', new SmoothScrolling());
         this.components.set('interactiveElements', new InteractiveElements());
-        this.components.set('cursorEffects', new CursorEffects());
         this.components.set('scrollAnimations', new ScrollAnimations());
 
         // Initialize typing animation for hero subtitle
@@ -103,40 +101,7 @@ export class PortfolioApp {
                     opacity: 0;
                 }
             }
-            
-            
-            .custom-cursor {
-                display: none;
-            }
-            
-            @media (min-width: 769px) {
-                .custom-cursor {
-                    display: block;
-                }
-                
-                * {
-                    cursor: none !important;
-                }
-            }
-            
-            @media (min-width: 769px) {
-                .custom-cursor {
-                    display: block;
-                }
-                
-                /* Hide default cursor on all elements */
-                *, *::before, *::after {
-                    cursor: none !important;
-                }
-                
-                /* Ensure custom cursor is always on top */
-                .custom-cursor,
-                .custom-cursor-inner {
-                    pointer-events: none !important;
-                    z-index: 99999 !important;
-                }
-            }
-            
+
             .theme-toggle:hover {
                 transform: scale(1.1);
             }

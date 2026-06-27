@@ -21,3 +21,7 @@ assets/images/optimized/
 
 # Performance optimization artifacts
 .optimization-cache/
+
+# Local bundler config and vendored gems
+.bundle/
+vendor/
