@@ -22,7 +22,6 @@ assets/js/
 │   └── SmoothScrolling.js   # Smooth anchor link scrolling
 ├── interactive/
 │   ├── InteractiveElements.js # Card tilt & button ripple effects
-│   └── CursorEffects.js      # Custom cursor effects
 └── animations/
     └── ScrollAnimations.js   # Scroll-triggered animations
 ```
@@ -39,7 +38,6 @@ Each class has a single, well-defined responsibility:
 - **MobileNavigation**: Handles mobile menu functionality
 - **SmoothScrolling**: Manages smooth anchor link scrolling
 - **InteractiveElements**: Handles interactive UI effects
-- **CursorEffects**: Manages custom cursor effects
 - **ScrollAnimations**: Handles scroll-triggered animations
 - **PortfolioApp**: Orchestrates all components
 

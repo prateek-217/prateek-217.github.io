@@ -10,7 +10,6 @@ import { NavigationEffects } from '../navigation/NavigationEffects.js';
 import { MobileNavigation } from '../navigation/MobileNavigation.js';
 import { SmoothScrolling } from '../navigation/SmoothScrolling.js';
 import { InteractiveElements } from '../interactive/InteractiveElements.js';
-import { CursorEffects } from '../interactive/CursorEffects.js';
 import { ScrollAnimations } from '../animations/ScrollAnimations.js';
 
 export class PortfolioApp {
@@ -35,7 +34,6 @@ export class PortfolioApp {
         this.components.set('mobileNavigation', new MobileNavigation());
         this.components.set('smoothScrolling', new SmoothScrolling());
         this.components.set('interactiveElements', new InteractiveElements());
-        this.components.set('cursorEffects', new CursorEffects());
         this.components.set('scrollAnimations', new ScrollAnimations());
 
         // Initialize typing animation for hero subtitle
